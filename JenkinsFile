@@ -2,29 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Run') {
             steps {
-                echo 'Hello World'
-            }
-        }
-        stage('Build') {
-            steps {
-                echo 'Building'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing'
-            }
-        }
-        stage('Release') {
-            steps {
-                echo 'Releasing'
+                dir("D:\\OctaSim_BUA_with_REC_working\\07_OctaSimEngine\\Debug") {
+                    bat "runOctaSimEngine_Bua.bat"
+                }
             }
         }
     }
